@@ -663,6 +663,50 @@ In place of common selectors like class, id or attribute we can use `document.qu
 
 ## Ajax
 
+- [4.1](#4.1) <a name='4.1'></a> getJSON
+
+  ```js
+  // jQuery
+  $.getJSON('/my/url', function(data) {
+  });
+
+  // Native
+  var request = new XMLHttpRequest();
+  request.open('GET', '/my/url', true);
+
+  request.onload = function() {
+    if (this.status >= 200 && this.status < 400) {
+      // Success!
+      var data = JSON.parse(this.response);
+    } else {
+      // We reached our target server, but it returned an error
+
+    }
+  };
+
+  request.onerror = function() {
+    // There was a connection error of some sort
+  };
+
+  request.send();
+  ```
+
+  - [4.2](#4.2) <a name='4.2'></a> Post
+
+    ```js
+    // jQuery
+    $.ajax({type: 'POST', url: '/my/url', data: data });
+
+    // Native
+    var request = new XMLHttpRequest();
+    request.open('POST', '/my/url', true);
+    request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+    request.send(data);
+    ```
+
+
+  - [4.9](#4.9) <a name='4.9'></a> Fetch
+
 [Fetch API](https://fetch.spec.whatwg.org/) is the new standard to replace XMLHttpRequest to do ajax. It works on Chrome and Firefox, you can use polyfills to make it work on legacy browsers.
 
 Try [github/fetch](http://github.com/github/fetch) on IE9+ or [fetch-ie8](https://github.com/camsong/fetch-ie8/) on IE8+, [fetch-jsonp](https://github.com/camsong/fetch-jsonp) to make JSONP requests.
@@ -1172,6 +1216,12 @@ A promise represents the eventual result of an asynchronous operation. jQuery ha
   // More detail about show method, please refer to https://github.com/oneuijs/oui-dom-utils/blob/master/src/index.js#L363
   el.style.display = ''|'inline'|'inline-block'|'inline-table'|'block';
   el.style.display = 'none';
+  
+  // Better Solution
+  // CSS: .hidden {display: none};
+  el.classList.remove('hidden');
+  el.classList.add('hidden');
+  
   ```
 
 - [8.2](#8.2) <a name='8.2'></a> Toggle
