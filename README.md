@@ -1,6 +1,6 @@
 ## You Don't Need jQuery [![Build Status](https://travis-ci.org/oneuijs/You-Dont-Need-jQuery.svg)](https://travis-ci.org/oneuijs/You-Dont-Need-jQuery)
 
-Frontend environments evolve rapidly nowadays, modern browsers have already implemented a great deal of DOM/BOM APIs which are good enough. We don't have to learn jQuery from scratch for DOM manipulation or events. In the meantime, thanks to the prevailment of frontend libraries such as React, Angular and Vue, manipulating DOM directly becomes anti-pattern, jQuery has never been less important. This project summarizes most of the jQuery method alternatives in native implementation, with IE 10+ support.
+Frontend environments evolve rapidly nowadays, modern browsers have already implemented a great deal of DOM/BOM APIs which are good enough. We don't have to learn jQuery from scratch for DOM manipulation or events. In the meantime, thanks to the prevailment of frontend libraries such as React, Angular and Vue, manipulating DOM directly becomes anti-pattern, jQuery has never been less important. This project summarizes most of the jQuery method alternatives in native implementation, with IE 11+ support.
 
 ## Table of Contents
 
@@ -128,10 +128,10 @@ In place of common selectors like class, id or attribute we can use `document.qu
   // jQuery
   $el.closest(selector);
 
-  // Native - Only latest, NO IE
+  // Native - Only latest, NO IE 11
   el.closest(selector);
 
-  // Native - IE10+
+  // Native - IE 10+
   function closest(el, selector) {
     const matchesSelector = el.matches || el.webkitMatchesSelector || el.mozMatchesSelector || el.msMatchesSelector;
 
@@ -258,10 +258,7 @@ In place of common selectors like class, id or attribute we can use `document.qu
     // jQuery
     $el.data('foo');
 
-    // Native (use `getAttribute`)
-    el.getAttribute('data-foo');
-
-    // Native (use `dataset` if only need to support IE 11+)
+    // Native
     el.dataset['foo'];
     ```
 
