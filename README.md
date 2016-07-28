@@ -16,22 +16,6 @@ Frontend environments evolve rapidly nowadays, modern browsers have already impl
 1. [Alternatives](#alternatives)
 1. [Browser Support](#browser-support)
 
-## Translations
-
-* [한국어](./README.ko-KR.md)
-* [简体中文](./README.zh-CN.md)
-* [Bahasa Melayu](./README-my.md)
-* [Bahasa Indonesia](./README-id.md)
-* [Português(PT-BR)](./README.pt-BR.md)
-* [Tiếng Việt Nam](./README-vi.md)
-* [Español](./README-es.md)
-* [Русский](./README-ru.md)
-* [Кыргызча](./README-kg.md)
-* [Türkçe](./README-tr.md)
-* [Italiano](./README-it.md)
-* [Français](./README-fr.md)
-* [日本語](./README-ja.md)
-
 ## Query Selector
 
 In place of common selectors like class, id or attribute we can use `document.querySelector` or `document.querySelectorAll` for substitution. The differences lie in:
@@ -59,6 +43,9 @@ In place of common selectors like class, id or attribute we can use `document.qu
 
   // Native
   document.querySelectorAll('.class');
+  
+  // Native for first result
+  document.querySelector('.class');
 
   // or
   document.getElementsByClassName('class');
@@ -134,6 +121,8 @@ In place of common selectors like class, id or attribute we can use `document.qu
 - [1.6](#1.6) <a name='1.6'></a> Closest
 
   Return the first matched element by provided selector, traversing from current element to document.
+
+  [Polyfill](https://raw.githubusercontent.com/jonathantneal/closest/master/closest.js)
 
   ```js
   // jQuery
