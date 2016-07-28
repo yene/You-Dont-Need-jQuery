@@ -691,27 +691,25 @@ In place of common selectors like class, id or attribute we can use `document.qu
   request.send();
   ```
 
-  - [4.2](#4.2) <a name='4.2'></a> Post
+- [4.2](#4.2) <a name='4.2'></a> Post
 
-    ```js
-    // jQuery
-    $.ajax({type: 'POST', url: '/my/url', data: data });
+  ```js
+  // jQuery
+  $.ajax({type: 'POST', url: '/my/url', data: data });
 
-    // Native
-    var request = new XMLHttpRequest();
-    request.open('POST', '/my/url', true);
-    request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
-    request.send(data);
-    ```
+  // Native
+  var request = new XMLHttpRequest();
+  request.open('POST', '/my/url', true);
+  request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+  request.send(data);
+  ```
 
-
-  - [4.9](#4.9) <a name='4.9'></a> Fetch
 
 [Fetch API](https://fetch.spec.whatwg.org/) is the new standard to replace XMLHttpRequest to do ajax. It works on Chrome and Firefox, you can use polyfills to make it work on legacy browsers.
 
 Try [github/fetch](http://github.com/github/fetch) on IE9+ or [fetch-ie8](https://github.com/camsong/fetch-ie8/) on IE8+, [fetch-jsonp](https://github.com/camsong/fetch-jsonp) to make JSONP requests.
 
-- [4.1](#4.1) <a name='4.1'></a> Load data from the server and place the returned HTML into the matched element.
+- [4.9](#4.9) <a name='4.9'></a> Load data from the server and place the returned HTML into the matched element.
 
   ```js
   // jQuery
