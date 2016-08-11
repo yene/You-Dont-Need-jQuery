@@ -1216,7 +1216,7 @@ A promise represents the eventual result of an asynchronous operation. jQuery ha
   el.style.display = 'none';
   
   // Better Solution
-  // CSS: .hidden {display: none};
+  // CSS: .hidden {display: none;} or .blank {visibility: hidden;}
   el.classList.remove('hidden');
   el.classList.add('hidden');
   
